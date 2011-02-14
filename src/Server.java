@@ -5,7 +5,7 @@ import java.rmi.server.*;
  * Remote Class for the Chat.
  */
 
-public class Chat extends UnicastRemoteObject implements ChatInterface{
+public class Server extends UnicastRemoteObject implements ServerInterface{
 
 	/**
 	 * Attributes
@@ -17,7 +17,7 @@ public class Chat extends UnicastRemoteObject implements ChatInterface{
 	 * Constructor
 	 * @throws RemoteException
 	 */
-	protected Chat() throws RemoteException {
+	protected Server() throws RemoteException {
 		super();
 		this.countUserOnline = 0;
 	}

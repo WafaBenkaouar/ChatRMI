@@ -3,7 +3,7 @@ import java.rmi.*;
  * Remote Interface for the Chat class.
  */
 
-public interface ChatInterface extends Remote{
+public interface ServerInterface extends Remote{
 	
 	/**
 	 * Remotely accessible methods
