@@ -10,8 +10,15 @@ public interface ServerInterface extends Remote{
 	 * @param userId
 	 * @param message
 	 */
-	public void leaveChat(int userId)throws RemoteException;
-	public void joinChat(int userId)throws RemoteException;
-	public void showMessage(String message)throws RemoteException;
+	public void login(String name)throws RemoteException;
+	public void logout(String name)throws RemoteException;
+	public void printMessage(String username,String message)throws RemoteException;
+	public boolean isON() throws RemoteException;
+	public void registerNewUser(String name) throws RemoteException;
+	public void start() throws RemoteException;
+	public void stop()throws RemoteException;
+	public void unregisterUser(String name)throws RemoteException;
+	public int getNbUserConnected()throws RemoteException;
+	 
 	
 }
