@@ -136,13 +136,13 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
 		}
 	}
 
-	public void printMessage(String username, String message) throws RemoteException {
+	public String printMessage(String username, String message) throws RemoteException {
 		  Calendar calendar = new GregorianCalendar();
 		  
 		    int hour = calendar.get(Calendar.HOUR_OF_DAY);
 		    int minute = calendar.get(Calendar.MINUTE);
 		    int second = calendar.get(Calendar.SECOND);
-		    
+		   
 		  		
 		try {
 			this.setContents(text, "["+hour+":"+minute+":"+second+"] | "+"<"+username+"> "+message+"\n");
@@ -151,7 +151,7 @@ public class Server extends UnicastRemoteObject implements ServerInterface {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.print(this.getContents(text));
+		return this.getContents(text);
 	}
 
 	public int getNbUserConnected()throws RemoteException {

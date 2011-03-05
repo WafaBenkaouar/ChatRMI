@@ -12,7 +12,7 @@ public interface ServerInterface extends Remote{
 	 */
 	public void login(String name)throws RemoteException;
 	public void logout(String name)throws RemoteException;
-	public void printMessage(String username,String message)throws RemoteException;
+	public String printMessage(String username,String message)throws RemoteException;
 	public boolean isON() throws RemoteException;
 	public void registerNewUser(String name) throws RemoteException;
 	public void start() throws RemoteException;

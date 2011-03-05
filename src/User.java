@@ -1,4 +1,4 @@
-import java.io.DataInputStream;
+import java.io.*;
 import java.rmi.Naming;
 import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
@@ -6,15 +6,26 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.Scanner;
 
 
-public class User extends UnicastRemoteObject implements UserInterface{
+public class User extends UnicastRemoteObject {
 
-    protected User() throws RemoteException {
+	protected String username;
+	protected User(String username) throws RemoteException {
         super();
-    // TODO Auto-generated constructor stub
+        this.username = username;
+   
+    }
+	protected User() throws RemoteException {
+     this("Anonymus");
     }
 
-    public static void displayMessage(String message, String username) {
-    System.out.println("<"+username+"> "+message+"\n");
+    public static void displayMessage  (String message, String username) throws IOException {
+// set text in the file text.txt
+    	
+    			  
+    		  
+    		   
+    	//print the text in the Jtextfield
+    	
     }
    
     /**
@@ -25,7 +36,7 @@ public class User extends UnicastRemoteObject implements UserInterface{
     }
 */
 
-    public static void main(String args[]) throws Exception {
+   /* public static void main(String args[]) throws Exception {
     	try{
 			System.setSecurityManager(new RMISecurityManager());
     	
@@ -58,8 +69,5 @@ public class User extends UnicastRemoteObject implements UserInterface{
 	}
     }
 
-    @Override
-    public void ChatServer() throws RemoteException {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+*/   
 }
